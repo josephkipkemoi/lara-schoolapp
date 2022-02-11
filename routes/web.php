@@ -6,7 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\StaffController;
@@ -23,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, '__invoke']);
+ 
+Route::get('/', [LandingController::class, '__invoke']);
 Route::get('/about', [AboutController::class, '__invoke']);
 Route::get('/management', [ManagementController::class,'__invoke']);
 Route::get('/departments', [DepartmentController::class,'__invoke']);
@@ -34,3 +35,8 @@ Route::get('/contact', [ContactController::class,'__invoke']);
 Route::get('/reports', [ReportController::class,'__invoke']);
 Route::get('/downloads', [DownloadController::class, '__invoke']);
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

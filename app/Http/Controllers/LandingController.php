@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class LandingController extends Controller
 {
     //
     public function __invoke()
     {
-        return view('home.show');
+        return view('landing.show');
     }
 }

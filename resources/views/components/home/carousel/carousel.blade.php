@@ -1,4 +1,4 @@
- <div id="CcarouselExampleIndicators" class="carousel slide bg-success rounded h-50" data-ride="carousel">
+ <div id="CcarouselExampleIndicators" class="carousel slide bg-success rounded h-50  " data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

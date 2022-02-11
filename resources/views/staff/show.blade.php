@@ -2,8 +2,12 @@
 
 
 @section('content')
-<div class="container bg-white">
-<table class="table">
+<div class="container bg-white p-4">
+<div class="bg-primary text-white rounded">
+<h1 class="p-2">School Staff</h1>
+</div>
+ 
+<table class="table bg-warning rounded">
   <thead>
     <tr>
       <th scope="col">#</th>
