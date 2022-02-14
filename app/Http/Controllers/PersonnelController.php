@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PersonnelController extends Controller
 {
     //
-    public function __invoke()
+    public function create()
     {
         return view('personnel.store');
     }

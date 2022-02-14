@@ -40,8 +40,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/personnel/create', [PersonnelController::class, '__invoke'])->name('personnel.create');
+Route::get('/personnel/create', [PersonnelController::class, 'create'])->name('personnel.create');
 Route::post('/personnel', [PersonnelController::class, 'store'])->name('personnel.store');
 Route::delete('/personnel/{personnel}', [PersonnelController::class, 'destroy'])->name('personnel.destroy');
+
+Route::get('/events/create', [EventController::class, 'create'])->name('event.create');
+Route::post('/events', [EventController::class, 'store'])->name('event.store');
 
 require __DIR__.'/auth.php';
