@@ -26,4 +26,13 @@ class PersonnelController extends Controller
        
         return view('personnel.success');
     }
+
+    public function destroy($id)
+    {
+        $person = Personnel::find($id);
+
+        $person->delete();
+
+        return view('personnel.destroy');
+    }
 }

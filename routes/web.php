@@ -42,5 +42,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/personnel/create', [PersonnelController::class, '__invoke'])->name('personnel.create');
 Route::post('/personnel', [PersonnelController::class, 'store'])->name('personnel.store');
+Route::delete('/personnel/{personnel}', [PersonnelController::class, 'destroy'])->name('personnel.destroy');
 
 require __DIR__.'/auth.php';

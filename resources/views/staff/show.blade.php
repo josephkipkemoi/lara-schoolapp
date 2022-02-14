@@ -32,9 +32,13 @@
 
         @elseif(auth()->user()->role[0]->role == 'Administrator')
         <td>
-           <a href="#" class="btn btn-danger">
-             <i class="bi bi-x-circle-fill"></i>
-           </a>
+        <form method="POST" action={{route('personnel.destroy',[$person->id])}}>
+         @csrf
+         @method('DELETE')
+            <button type="submit" class="btn btn-danger">
+              <i class="bi bi-x-circle-fill"></i>
+            </button>
+         </form>
         </td>       
         @endif
       </tr>
