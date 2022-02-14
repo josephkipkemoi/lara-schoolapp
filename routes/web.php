@@ -8,6 +8,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ManagementController;
+use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
@@ -38,5 +39,8 @@ Route::get('/downloads', [DownloadController::class, '__invoke']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/personnel/create', [PersonnelController::class, '__invoke'])->name('personnel.create');
+Route::post('/personnel', [PersonnelController::class, 'store'])->name('personnel.store');
 
 require __DIR__.'/auth.php';
