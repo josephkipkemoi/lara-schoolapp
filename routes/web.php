@@ -12,6 +12,7 @@ use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,5 +47,16 @@ Route::delete('/personnel/{personnel}', [PersonnelController::class, 'destroy'])
 
 Route::get('/events/create', [EventController::class, 'create'])->name('event.create');
 Route::post('/events', [EventController::class, 'store'])->name('event.store');
+
+Route::get('reports/create', [ReportController::class, 'create'])->name('report.create');
+Route::post('reports/report', [ReportController::class, 'store'])->name('report.store');
+Route::post('reports', [ReportController::class, 'storereport'])->name('report.storereport');
+Route::delete('reports/{report}/remove', [ReportController::class, 'deletereport'])->name('report.deletereport');
+
+Route::get('/report/show/{report}', function($report) {
+  $storage = Storage::download($report);
+ 
+  return $storage;
+});
 
 require __DIR__.'/auth.php';

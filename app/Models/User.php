@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use function PHPUnit\Framework\returnSelf;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -50,5 +52,10 @@ class User extends Authenticatable
     public function event()
     {
         return $this->hasMany(Event::class);
+    }
+
+    public function school_report()
+    {
+        return $this->hasMany(SchoolReport::class);
     }
 }

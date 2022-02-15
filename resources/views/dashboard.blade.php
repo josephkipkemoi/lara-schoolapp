@@ -15,6 +15,7 @@
                 @if(auth()->user()->role[0]->id == 3)
                     <a href={{route('personnel.create')}} class="btn btn-primary">Add Personnel</a>
                     <a href={{route('event.create')}} class="btn btn-primary">Add Event</a>
+                    <a href={{route('report.create')}} class="btn btn-primary">Add Report</a>
                 @endif
                 </div>
             </div>
