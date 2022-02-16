@@ -1,5 +1,4 @@
-@extends('main');
-
+@extends('main')
 
 @section('content')
 |<div class="container p-4 bg-white">

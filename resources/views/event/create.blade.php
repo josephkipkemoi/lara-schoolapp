@@ -1,4 +1,4 @@
- @extends('main');
+@extends('main')
 
 @section('content')
 <div class="container bg-white">

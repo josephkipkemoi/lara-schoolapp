@@ -1,4 +1,4 @@
-@extends('main');
+@extends('main')
 
 @section('content')
 <div class="container bg-white p-4">
@@ -32,6 +32,15 @@
             <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10 mt-2">
             <input type="email" class="form-control" id="colFormLabel" placeholder="Email Address" name="email" value={{old('email')}}>
+            </div>
+         </div>
+        <div class="form-group row">
+            @error('title')
+                <span class="d-block text-danger">{{$message}}</span>
+            @enderror
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10 mt-2">
+            <input type="text" class="form-control" id="colFormLabel" placeholder="Title" name="title" value={{old('title')}}>
             </div>
          </div>
          <div class="form-group row">

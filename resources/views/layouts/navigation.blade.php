@@ -20,12 +20,30 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-            <div class="p-2">
-                <button>
-                <i class="bi bi-bell"> </i> 
-                <small class="text-black">{{ 0 }}</small>
-                </button>
-            </div>
+               <x-dropdown align="right" width="48" >
+                    <x-slot name="trigger">
+                        <button class="p-3 flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <div class="ml-1">
+                                <i class="bi bi-bell"> </i> 
+                                <small class="text-black">{{ auth()->user()->unreadNotifications->count() }}</small>
+                            </div>
+                        </button>
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <!-- Notifications -->
+                        <a href={{route('notification.show')}} class="p-2 d-block">Notifications</a>
+                        
+                        @foreach(auth()->user()->unreadNotifications as $notification)
+                         <a href={{route('notification.show')}} class="p-2 d-block">{{$notification['data']['message']}}</a>
+
+                        @endforeach                       
+                        
+                    </x-slot>
+                </x-dropdown>
+
+    
+                
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
