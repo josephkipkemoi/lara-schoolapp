@@ -37,7 +37,7 @@
     <table class="table bg-warning rounded">
     <thead>
         <tr>
-        <th scope="col">Link</th>
+        <th scope="col">Report Form</th>
         <th scope="col">Class/Grade</th>
         <th scope="col">Term</th>
         <th scope="col">Year</th>

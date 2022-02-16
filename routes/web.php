@@ -53,10 +53,21 @@ Route::post('reports/report', [ReportController::class, 'store'])->name('report.
 Route::post('reports', [ReportController::class, 'storereport'])->name('report.storereport');
 Route::delete('reports/{report}/remove', [ReportController::class, 'deletereport'])->name('report.deletereport');
 
+// Download REPORTS PDF
 Route::get('/report/show/{report}', function($report) {
   $storage = Storage::download($report);
  
   return $storage;
 });
+
+// Download DOWNLOADS PDF
+Route::get('/downloads/show/{download}', function($download) {
+  $download = Storage::download($download);
+
+  return $download;
+});
+
+Route::get('downloads/create', [DownloadController::class, 'create'])->name('download.create');
+Route::post('downloads/store', [DownloadController::class, 'store'])->name('download.store');
 
 require __DIR__.'/auth.php';

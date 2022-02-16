@@ -16,6 +16,7 @@
                     <a href={{route('personnel.create')}} class="btn btn-primary">Add Personnel</a>
                     <a href={{route('event.create')}} class="btn btn-primary">Add Event</a>
                     <a href={{route('report.create')}} class="btn btn-primary">Add Report</a>
+                    <a href={{route('download.create')}} class="btn btn-primary">Add Download Files</a>
                 @endif
                 </div>
             </div>
