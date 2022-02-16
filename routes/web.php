@@ -70,4 +70,6 @@ Route::get('/downloads/show/{download}', function($download) {
 Route::get('downloads/create', [DownloadController::class, 'create'])->name('download.create');
 Route::post('downloads/store', [DownloadController::class, 'store'])->name('download.store');
 
+Route::post('/conctact/store', [ContactController::class, 'store'])->name('contact.store');
+
 require __DIR__.'/auth.php';
