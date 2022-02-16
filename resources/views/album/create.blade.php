@@ -17,9 +17,9 @@
                 <span class="d-block text-danger">{{$message}}</span>
             @enderror
             <label for="photo">Add Photo (s)</label>
-            <input id="photo" class="form-control" type="file" name="photo"/>
+            <input id="photo" class="form-control" type="file" name="photo[]" multiple accept="image/*"/>
 
-            <button class="btn btn-primary mt-2 mb-2">Add Photo Album</button>
+            <button class="btn btn-primary mt-2 mb-2">Upload Photo Album</button>
         </form>
     </div>
 </div>

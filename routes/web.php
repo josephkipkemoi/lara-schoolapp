@@ -82,8 +82,10 @@ Route::post('/conctact/store', [ContactController::class, 'store'])->name('conta
 
 // This route will be used by admin when adding photo albums
 Route::get('/photos/create', [AlbumController::class, 'create'])->name('photo.create');
+Route::post('/photos', [AlbumController::class, 'store'])->name('album.store');
+Route::get('/albums/{album}', [AlbumController::class, 'show'])->name('album.show');
 
 // Route showing contact notifications
 Route::get('/notifications', [NotificationController::class, 'show'])->name('notification.show');
-
+ 
 require __DIR__.'/auth.php';
