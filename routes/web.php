@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\BoardController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DownloadController;
@@ -107,6 +108,12 @@ Route::get('/notifications', [NotificationController::class, 'show'])->name('not
 Route::controller(AboutController::class)->group(function() {
   Route::post('/about', 'store')->name('about.store');
   Route::get('/about/create', 'create')->name('about.create');
+});
+
+// These routes will be used by admin to post/remove board members
+Route::controller(BoardController::class)->group(function() {
+  Route::post('/board', 'store')->name('management.store');
+  Route::get('/board/create', 'create')->name('management.create');
 });
 
 require __DIR__.'/auth.php';

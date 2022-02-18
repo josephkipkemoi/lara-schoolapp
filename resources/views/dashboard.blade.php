@@ -19,6 +19,7 @@
                     <a href={{route('download.create')}} class="btn btn-primary">Add Download Files</a>
                     <a href={{route('photo.create')}} class="btn btn-primary">Add Photo</a>
                     <a href={{route('about.create')}} class="btn btn-primary">Add Biography</a>
+                    <a href={{route('management.create')}} class="btn btn-primary">Add School Management</a>
                 @endif
                 </div>
             </div>
