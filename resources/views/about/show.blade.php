@@ -8,9 +8,9 @@
   <div class="card">
   <div class="card-header bg-warning text-black">Laini Saba Primary School</div>
   <div class="card-body">
-    <p>
-        Laini Saba was established in 2002 with blessing from the Pope of Rome Cardinal John Njue
-    </p>
+    @foreach($biographies as $biography)
+      <p>{{$biography->school_background}}</p>
+    @endforeach
   </div>
   </div>
   

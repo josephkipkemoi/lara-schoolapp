@@ -102,5 +102,11 @@ Route::controller(AlbumController::class)->group(function(){
 
 // Route showing contact notifications
 Route::get('/notifications', [NotificationController::class, 'show'])->name('notification.show');
- 
+
+// These Routes will be used by admin to post/edit about page
+Route::controller(AboutController::class)->group(function() {
+  Route::post('/about', 'store')->name('about.store');
+  Route::get('/about/create', 'create')->name('about.create');
+});
+
 require __DIR__.'/auth.php';
